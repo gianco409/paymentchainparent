@@ -48,6 +48,7 @@
 	<name>paymentchainparent</name>
 	<description>POM parent project for all spring boot projects</description>
 	<properties>
+		<java.version>8</java.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<spring-boot.version>2.7.5</spring-boot.version>
