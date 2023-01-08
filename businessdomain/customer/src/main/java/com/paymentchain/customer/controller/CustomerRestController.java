@@ -77,7 +77,15 @@ public class CustomerRestController {
 
 	@PutMapping("/{id}")
 	public ResponseEntity<?> put(@PathVariable long id, @RequestBody Customer input) {
-		Customer save = customerRepository.save(input);
+		Customer find = customerRepository.findById(id).get();
+		if(find != null) {
+			find.setCode(input.getCode());
+			find.setName(input.getName());
+			find.setPhone(input.getPhone());
+			find.setSurnames(input.getSurnames());
+		}
+		
+		Customer save = customerRepository.save(find);
 		return ResponseEntity.ok(save);
 	}
 
@@ -104,12 +112,13 @@ public class CustomerRestController {
 
 		List<CustomerProduct> products = customer.getProducts();
 
+		// for each product find it name
 		products.forEach(x -> {
 			String productName = getProductName(x.getId());
 			x.setProductName(productName);
 		});
 
-		//find all transactions that belong this account number
+		// find all transactions that belong this account number
 		List<?> transactions = getTransactions(customer.getIban());
 		customer.setTransactions(transactions);
 		return customer;

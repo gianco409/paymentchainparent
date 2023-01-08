@@ -1,5 +1,7 @@
 package com.paymentchain.transactions.entities;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,19 +12,17 @@ import lombok.Data;
 @Entity
 @Data
 public class Transaction {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private Double amount;
-	private String channel;
-	private String date;
-	private String description;
-	private String fee;
-	private String ibanAccount;
 	private String reference;
+	private String ibanAccount;
+	private LocalDateTime date;
+	private double amount;
+	private double fee;
+	private String description;
 	private String status;
-	
-	
+	private String channel;
 
 }
