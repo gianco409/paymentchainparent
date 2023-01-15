@@ -24,10 +24,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 public class ProductApplication {
 
-	// Simple example shows how a command line spring application can execute an
-	// injected bean service. Also demonstrates how you can use @Value to inject
-	// command line args ('--name=whatever') or application properties
-
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(ProductApplication.class, args);
 	}

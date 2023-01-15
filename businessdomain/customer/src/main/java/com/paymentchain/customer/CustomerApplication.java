@@ -17,19 +17,12 @@
 package com.paymentchain.customer;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-
-@Configuration
-@EnableAutoConfiguration
-@ComponentScan
+@SpringBootApplication
+@EnableEurekaClient
 public class CustomerApplication {
-
-	// Simple example shows how a command line spring application can execute an
-	// injected bean service. Also demonstrates how you can use @Value to inject
-	// command line args ('--name=whatever') or application properties
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(CustomerApplication.class, args);
