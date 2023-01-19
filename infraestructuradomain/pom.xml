@@ -10,7 +10,6 @@
 	<artifactId>infraestructuradomain</artifactId>
 	<packaging>pom</packaging>
 	<properties>
-<!--		<spring-cloud-dependencies.version>Finchley.RELEASE</spring-cloud-dependencies.version>-->
 		<spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
 	</properties>
 	<!--Allows consolidate and centralized management of deendency version witout adding dependencies
@@ -28,5 +27,6 @@
 	</dependencyManagement>
 	<modules>
 		<module>eurekaserver</module>
+		<module>adminserver</module>
 	</modules>
 </project>
