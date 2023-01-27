@@ -14,36 +14,21 @@
  * limitations under the License.
  */
 
-package com.paymentchain.adminserver;
+package com.paymentchain.configserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-
-import de.codecentric.boot.admin.server.config.EnableAdminServer;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@EnableAdminServer
+@EnableConfigServer
 @EnableEurekaClient
-public class SampleSimpleApplication {
+public class ConfigServerApplication {
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(SampleSimpleApplication.class, args);
+		SpringApplication.run(ConfigServerApplication.class, args);
 	}
-
-	@Configuration
-	public class SecurityConfiguration {
-		@Bean
-		protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-			http.authorizeRequests().anyRequest().permitAll().and().csrf().disable();
-			return http.build();
-		}
-	}
-
 }
